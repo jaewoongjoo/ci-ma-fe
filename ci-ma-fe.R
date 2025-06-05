@@ -2,6 +2,7 @@ packages <- c("MASS", "stats", "base", "mvtnorm", "foreach", "doParallel", "Matr
 
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) { install.packages(packages[!installed_packages], repos = "http://cran.us.r-project.org") }
+invisible(lapply(packages, library, character.only = TRUE))
 
 loc.current <- function() {
   cmdArgs <- commandArgs(trailingOnly = FALSE)
@@ -16,8 +17,6 @@ loc.current <- function() {
 code.dir <- loc.current()
 setwd(code.dir)
 
-# Packages loading
-invisible(lapply(packages, library, character.only = TRUE))
 
 ci_ma_fe_simul <- function(Nsim, dim, true_bet, Num_ext, num_study, study_size, A, mu_y, sigma2_y, df_y, mu_x, sigma2_x, x_corr, num_boot, seed_num){
   set.seed(seed_num)

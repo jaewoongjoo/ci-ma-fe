@@ -8,3 +8,4 @@ This repository provides the manuscript, the supplementary materials, and reprod
 2. `ci-ma-fe-supp.pdf`: The supplementary material of the paper.
 3. `ci-ma-fe.R`: R script for the simulation studies. This code generates `.RData` files used in the analysis.
 4. `ci-ma-fe-figure1.R`: R script to generate Figure 1 in the paper.
+4. `ci-ma-fe-figure2.R`: R script to generate Figure 2 in the paper.
