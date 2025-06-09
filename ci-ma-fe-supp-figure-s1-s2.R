@@ -45,7 +45,6 @@ pch_values_experiment <- 2
 pch_values_experiment_filled <- c(15,16)
 
 ###1. create figure S-1
-
 coverage_0.3 <- rbind(rho_0.3_m10000$Real[6,], rho_0.3$Real[6,], rho_0.3$Oracle[6,])
 coverage_0.6 <- rbind(rho_0.6_m10000$Real[6,], rho_0.6$Real[6,], rho_0.6$Oracle[6,])
 coverage_0.7 <- rbind(rho_0.7_m10000$Real[6,], rho_0.7$Real[6,], rho_0.7$Oracle[6,])
