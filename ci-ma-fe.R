@@ -183,28 +183,28 @@ ci_ma_fe_simul <- function(Nsim, dim, true_bet, Num_ext, num_study, study_size, 
     }
   }
   
-  output_table <- rbind(true_bet, #TRUE
-                        apply(hat_bet, 2,mean)[-1], #ESTIM
-                        true_bet-apply(hat_bet, 2, mean)[-1], #BIAS
-                        (apply(hat_bet, 2,sd)^2)[-1],#VAR
-                        (true_bet - apply(hat_bet, 2,mean)[-1])^2+(apply(hat_bet, 2,sd)[-1])^2,#MSE
-                        bet_cover_boot/Nsim) #Coverage
+  output_table <- rbind(true_bet, #true
+                        apply(hat_bet, 2,mean)[-1], #estim
+                        true_bet-apply(hat_bet, 2, mean)[-1], #bias
+                        (apply(hat_bet, 2,sd)^2)[-1],#var
+                        (true_bet - apply(hat_bet, 2,mean)[-1])^2+(apply(hat_bet, 2,sd)[-1])^2,#mse
+                        bet_cover_boot/Nsim) #coverage
   
   rownames(output_table) <- c("True Value", "Estimate", "Bias", "Variance", "MSE", "Coverage")
   
-  output_table_exact <- rbind(true_bet, #TRUE
-                              apply(hat_bet_exact, 2,mean)[-1], #ESTIM
-                              true_bet-apply(hat_bet_exact, 2, mean)[-1], #BIAS
-                              (apply(hat_bet_exact, 2,sd)^2)[-1],#VAR
-                              (true_bet-apply(hat_bet_exact, 2,mean)[-1])^2+(apply(hat_bet_exact, 2,sd)[-1])^2,#MSE
-                              bet_cover_exact_boot/Nsim) #Coverage
+  output_table_exact <- rbind(true_bet, #true
+                              apply(hat_bet_exact, 2,mean)[-1], #estim
+                              true_bet-apply(hat_bet_exact, 2, mean)[-1], #bias
+                              (apply(hat_bet_exact, 2,sd)^2)[-1],#var
+                              (true_bet-apply(hat_bet_exact, 2,mean)[-1])^2+(apply(hat_bet_exact, 2,sd)[-1])^2,#mse
+                              bet_cover_exact_boot/Nsim) #coverage
   
-  output_table_rootn <- rbind(true_bet, #TRUE
-                              apply(hat_bet_rootn, 2,mean)[-1], #ESTIM
-                              true_bet-apply(hat_bet_rootn, 2, mean)[-1], #BIAS
-                              (apply(hat_bet_rootn, 2,sd)^2)[-1],#VAR
-                              (true_bet-apply(hat_bet_rootn, 2,mean)[-1])^2+(apply(hat_bet_rootn, 2,sd)[-1])^2,#MSE
-                              bet_cover_rootn_boot/Nsim) #Coverage
+  output_table_rootn <- rbind(true_bet, #true
+                              apply(hat_bet_rootn, 2,mean)[-1], #estim
+                              true_bet-apply(hat_bet_rootn, 2, mean)[-1], #bias
+                              (apply(hat_bet_rootn, 2,sd)^2)[-1],#var
+                              (true_bet-apply(hat_bet_rootn, 2,mean)[-1])^2+(apply(hat_bet_rootn, 2,sd)[-1])^2,#mse
+                              bet_cover_rootn_boot/Nsim) #coverage
   
   rownames(output_table_exact)= rownames(output_table); rownames(output_table_rootn)= rownames(output_table);
   total_output<- list(output_table,output_table_exact,output_table_rootn,hat_bet)
