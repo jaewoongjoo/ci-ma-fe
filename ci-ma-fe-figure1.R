@@ -18,8 +18,8 @@ code.dir <- loc.current()
 setwd(code.dir)
 load("gendata-ci-ma-fe.Rdata")
 
-rho_0.3 <-  results_50000[[1]][[1]][[1]];   
-rho_0.6 <-  results_50000[[1]][[1]][[2]];
+rho_0.3 <-  results_50000[[1]][[1]][[1]][[1]][[1]][[1]][[2]];
+rho_0.6 <-  results_50000[[1]][[1]][[1]][[2]]
 rho_0.8 <-  results_50000[[1]][[2]];
 rho_0.9 <-  results_50000[[2]];  
 
@@ -113,14 +113,13 @@ legend("topleft",
        pch=pch_values)
 dev.off()
 
-
+###1-4. create pdf for subfigure (d)
 hat_bet_rho0.3 <- rho_0.3$Estimates
 hat_bet_rho0.6 <- rho_0.6$Estimates
 hat_bet_rho0.8 <- rho_0.8$Estimates
 hat_bet_rho0.9 <- rho_0.9$Estimates
-
 bet<- true_bet
-###1-4. create pdf for subfigure (d)
+
 pdf_filename_panel4 <- paste0("panel4.pdf")
 pdf(pdf_filename_panel4 , width = 5, height = 5)
 par(mfrow = c(2, 2), mar = c(2, 2, 2, 1) + 0.1, oma = c(2.5, 1, 1.5, 0))
